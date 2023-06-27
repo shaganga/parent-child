@@ -13,4 +13,6 @@ jobs:
 
     steps:
       - name: Print value from parent action
-        run: echo "Value from parent action: ${{ needs.parent.outputs.value }}"
+        run: echo "Value from parent action is ${{ needs.parent.outputs.value }}"
+
+
