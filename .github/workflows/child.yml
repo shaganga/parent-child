@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Print value from parent action
         run: echo "Value from parent action is ${{ needs.parent.outputs.value }}"
-
-
