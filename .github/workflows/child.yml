@@ -8,8 +8,7 @@ on:
       - completed
 
 jobs:
-  child:
-    needs: parent
+  entry:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,3 +17,14 @@ jobs:
 
       - name: Print value from parent action
         run: echo "Value from parent action is ${{ needs.parent.outputs.value }}"
+
+  child:
+    needs: entry
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Some other step
+        run: echo "This is another step in the child action"
