@@ -15,4 +15,4 @@ jobs:
 
       - name: Set value in parent action
         id: set_value
-        run: echo "::set-output name=value::Handsome Hunk"
+        run: echo "::set-output name=value::Handsome Hunks"
