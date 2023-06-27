@@ -9,7 +9,6 @@ on:
 
 jobs:
   child:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -17,4 +16,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Print value from parent action
-        run: echo "Value from parent action is ${{ needs.build.outputs.value }}"
+        run: echo "Value from parent action is ${{ github.event.workflow_run.outputs.value }}"
+
