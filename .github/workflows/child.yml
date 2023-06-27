@@ -1,0 +1,15 @@
+name: Child Action
+
+on:
+  workflow_run:
+    workflows: ["Parent Action"]
+    types:
+      - completed
+
+jobs:
+  child:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print value from parent action
+        run: echo "Value from parent action: ${{ github.event.workflow_run.outputs.value }}"
