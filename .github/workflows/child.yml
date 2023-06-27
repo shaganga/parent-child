@@ -15,6 +15,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: value-artifact
+
       - name: Print value from parent action
-        run: echo "Value from parent action is ${{ github.event.workflow_run.outputs.value }}"
+        run: echo "Value from parent action is $(cat value.txt)"
 
