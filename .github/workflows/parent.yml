@@ -14,4 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set value in parent action
+        id: set_value
         run: echo "::set-output name=value::Handsome Hunk"
+
+    outputs:
+      value: ${{ steps.set_value.outputs.value }}
