@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Delay before triggering child action
+        run: sleep 1m
+
       - name: Download artifact
         run: |
           ARTIFACT_URL=$(curl -sS --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
