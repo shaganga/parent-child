@@ -1,4 +1,4 @@
-name: Parent Action
+name: ParentAction
 
 on:
   push:
